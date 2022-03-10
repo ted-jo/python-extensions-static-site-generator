@@ -1,6 +1,6 @@
 import sys
 import importlib
-from importlib import Path, import_module
+from importlib import Path
 
 def load_module(directory, name):
     sys.path.insert(0, directory)
