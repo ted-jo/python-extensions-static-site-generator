@@ -6,8 +6,8 @@ files = []
 def collect_files(source, site_parsers):
     valid = lambda p : not p.isinstance(parsers.ResourceParser)
     for path in source.rglob("*"):
-        for parser in list(filter(site_parsers, valid)):
-            if path.suffix.parser.valid_file_ext():
+        for parser in list(filter(valid, site_parsers)):
+            if parser.valid_file_ext(path.suffix):
                 files.append(path)
 
 @hooks.register("generate_menu")
